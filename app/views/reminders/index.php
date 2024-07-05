@@ -1,4 +1,12 @@
 <?php require_once 'app/views/templates/header.php' ?>
+<style>
+    body {
+        background-image: url('https://images-assets.nasa.gov/image/PIA07872/PIA07872~large.jpg?w=1920&h=1440&fit=clip&crop=faces%2Cfocalpoint');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+</style>
 <div class="container">
   <div class="page-header" id="banner">
     <div class="row">

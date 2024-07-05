@@ -11,12 +11,17 @@
 	<section class="vh-50">
 		<div class="container py-2 h-100" >
 			<div class="row d-flex justify-content-center align-items-center h-100">
-				<div class="col-md-8">
+				<div class="col-12 col-md-8 col-lg-6 col-xl-5">
 					<div style="border-radius: 1rem; background-color: #6c757d;">
 						<div class="card-body p-5 text-center">
 							<?php if (isset($_SESSION['failedAuth']) && $_SESSION['failedAuth'] >= 3): ?>
 									<div class="alert alert-danger" role="alert">
 											<?php echo "Exceeded failed login attempts, please wait 60 seconds"; ?>
+									</div>
+							<?php endif ?>
+							<?php if (isset($_SESSION['failedAuth']) && $_SESSION['failedAuth'] < 3): ?>
+									<div class="alert alert-danger" role="alert">
+											<?php echo "Incorrect username or password, please try again"; ?>
 									</div>
 							<?php endif ?>
 							<h1 class="mb-4" style="color: white">Sign in</h1>
