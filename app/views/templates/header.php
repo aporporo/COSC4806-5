@@ -35,6 +35,12 @@ if (!isset($_SESSION['auth'])) {
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
       <ul class="navbar-nav ">
+        <?php if (isset($_SESSION['permission']) && $_SESSION['permission'] == 2): ?>
+          <li class="nav-item">
+            <a class="nav-link" href="/reports">Reports</a
+          </li>
+  
+        <?php endif; ?>
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/reminders">Reminders</a>
         </li>
