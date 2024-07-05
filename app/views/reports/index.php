@@ -96,7 +96,30 @@
           </table>
       </div>
       <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-          This is where report 3 goes
+          <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+
+                  <th>Username</th>
+                  <th>Login Attempts</th>
+
+                </tr>
+              </thead>
+              <tbody>
+                <?php 
+                $counter = 1;
+                foreach ($data['total_logins'] as $total_logins) { ?>
+                    <tr>
+                        <td><?php echo $counter++ ?></td>
+                        <td><?php echo $total_logins['username']; ?></td>
+                        <td><?php echo $total_logins['count']; ?></td>
+
+
+                    </tr>
+                <?php } ?>
+              </tbody>
+            </table>
       </div>
     </div>
 
