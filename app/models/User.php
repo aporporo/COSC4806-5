@@ -51,6 +51,7 @@ class User {
           $_SESSION['userid'] = $rows['id'];
           $_SESSION['auth'] = 1;
     			$_SESSION['username'] = ucwords($username);
+          $_SESSION['permission'] = $rows['permission'];
           
           
     			unset($_SESSION['failedAuth']);
