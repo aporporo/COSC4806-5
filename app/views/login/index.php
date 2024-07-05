@@ -27,13 +27,18 @@
 							<h1 class="mb-4" style="color: white">Sign in</h1>
 							<form action="/login/verify" method="post" >
 							<fieldset>
-							<div data-mdb-input-init class="form-outline mb-3">
-								<input required type="text" class="form-control form-control-lg" name="username" placeholder="Username">
-							</div>
-							<div data-mdb-input-init class="form-outline mb-3">
-								<input required type="password" class="form-control form-control-lg" name="password" placeholder="Password">
-							</div>
-
+							
+								<div class="form-floating mb-3">
+									<input type="text" class="form-control" id="floatingInput" placeholder="Username" name="username">
+									<label for="floatingInput">Username</label>
+								</div>
+								<div class="form-floating">
+									<input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password">
+									<label for="floatingPassword">Password</label>
+								</div>
+								<div class="d-flex justify-content-between align-items-center mb-4">
+									
+								</div>
 							<button type="submit" class="btn btn-primary btn-lg" >Login</button>
 								<hr class="my-3">
 								
