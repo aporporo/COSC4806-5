@@ -35,6 +35,18 @@ class Reminder {
       return $row;
     }
 
+    //Gets all reminders and counters reminders per user
+    public function get_most_reminders_by_user() {
+      $db = db_connect();
+      $statement = $db->prepare("
+        select user_id, count(id) as count from reminders group by user_id order by count desc;
+        ");
+      $statement->execute();
+      $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+      return $rows;
+    }
+
+    
     //Updates a reminders subject in the database by its reminder ID
     public function update_reminders ($subject, $reminder_id) {
       $db = db_connect();

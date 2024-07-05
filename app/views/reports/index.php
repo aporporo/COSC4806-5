@@ -43,22 +43,21 @@
                   <th scope="col">#</th>
                   <th>Reminder ID</th>
                   <th>User ID</th>
+                  <th>Username</th>
                   <th>Reminder</th>
                   <th>Date Created</th>
-
                   <th>Completed</th>
-
-                  
                 </tr>
               </thead>
               <tbody>
                 <?php 
                 $counter = 1;
                 foreach ($data['reminders'] as $reminder) { ?>
-                  <tr class="<?php echo $reminder['is_completed'] == 1 ? 'table-success' : ''; ?>">
+                    <tr>
                         <td><?php echo $counter++ ?></td>
                         <td><?php echo $reminder['id']; ?></td>
                         <td><?php echo $reminder['user_id']; ?></td>
+                        <td><?php echo $reminder['username']; ?></td>
                         <td><?php echo $reminder['subject']; ?></td>
                         <td><?php echo $reminder['created_at'] ?></td>
                         <td><?php echo $reminder['is_completed'] ?></td>
@@ -69,7 +68,32 @@
             </table>
       </div>
       <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-          This is where report 2 goes
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                
+                <th>User ID</th>
+                <th>Username</th>
+                <th>Reminders</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+              <?php 
+              $counter = 1;
+              foreach ($data['most_reminders'] as $most_reminder) { ?>
+                  <tr>
+                      <td><?php echo $counter++ ?></td>
+                      <td><?php echo $most_reminder['user_id']; ?></td>
+                      <td><?php echo $most_reminder['username']; ?></td>
+                      <td><?php echo $most_reminder['count']; ?></td>
+
+
+                  </tr>
+              <?php } ?>
+            </tbody>
+          </table>
       </div>
       <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
           This is where report 3 goes
