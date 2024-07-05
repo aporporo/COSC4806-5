@@ -11,7 +11,7 @@ class Reminder {
     //Selects all reminders from the database and returns them
     public function get_all_reminders () {
       $db = db_connect();
-      $statement = $db->prepare("select * from reminders;");
+      $statement = $db->prepare("select * from reminders, users where reminders.user_id = users.id;");
       $statement->execute();
       $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
       return $rows;
@@ -35,12 +35,11 @@ class Reminder {
       return $row;
     }
 
-    //Gets all reminders and counters reminders per user
+    //Gets all reminders and counters reminders per user, and username from users table
     public function get_most_reminders_by_user() {
       $db = db_connect();
-      $statement = $db->prepare("
-        select user_id, count(id) as count from reminders group by user_id order by count desc;
-        ");
+      
+      $statement = $db->prepare("select users.username, reminders.user_id, count(reminders.id) as count from users, reminders where users.id = reminders.user_id group by users.username order by count desc;");
       $statement->execute();
       $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
       return $rows;
