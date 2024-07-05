@@ -24,6 +24,8 @@
         <th>Reminder ID</th>
         <th>Reminder</th>
         <th>Date Created</th>
+
+        <th>Completed</th>
         
         <th>Action</th>
       </tr>
@@ -32,11 +34,12 @@
       <?php 
       $counter = 1;
       foreach ($data['reminders'] as $reminder) { ?>
-        <tr class="<?php echo $reminder['is_completed'] == 1 ? 'bg-success' : ''; ?>">
+        <tr class="<?php echo $reminder['is_completed'] == 1 ? 'table-success' : ''; ?>">
           <td><?php echo $counter++ ?></td>
           <td><?php echo $reminder['id']; ?></td>
           <td><?php echo $reminder['subject']; ?></td>
           <td><?php echo $reminder['created_at'] ?></td>
+          <td><?php echo $reminder['is_completed'] ?></td>
           
           <td>
             <a href="/reminders/completed/<?php echo $reminder['id']; ?>" class="btn btn-success btn-sm">Completed</a>
