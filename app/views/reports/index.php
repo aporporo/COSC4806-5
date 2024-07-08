@@ -1,4 +1,11 @@
-<?php require_once 'app/views/templates/header.php' ?>
+<?php 
+if ($_SESSION['permission'] != 2) {
+    header('Location: /');
+}
+require_once 'app/views/templates/header.php' 
+
+?>
+
 
 <style>
     body {
