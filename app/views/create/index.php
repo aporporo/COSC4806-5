@@ -23,8 +23,8 @@
             <div class="justify-content-center align-items-center">
                 
                 <div class="container py-2 h-100">
-                    <div class="row d-flex justify-content-center mt-5">
-                        <div class="col-lg-12 mt-5" >
+                    <div class="row justify-content-center mt-5">
+                        <div class="col-lg-12" >
                             <div style="border-radius: 1rem; background-color: #6c757d;">
                                 <div class="card-body p-5 text-center">
                                     <?php if (isset($_SESSION['username_error'])): ?>

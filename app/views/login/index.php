@@ -1,17 +1,21 @@
 <?php require_once 'app/views/templates/headerPublic.php'?>
-<main role="main" class="container">
-    <div class="page-header" id="banner">
-        <div class="row">
-            <div class="col-lg-12">
-                <h1>You are not logged in</h1>
-            </div>
-        </div>
-    </div>
 
-	<section class="vh-50">
+<main role="main" class="container-fluid">
+	<div class="row">
+		<div class="col-sm-5 px-0">
+				<img src="https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001894/GSFC_20171208_Archive_e001894~medium.jpg" class="w-100 vh-100" style="object-fit: cover; object-position: center;">
+		</div>
+		<div class="col-md-7 justify-content-center align-items-center">
+    
+        <div class="text-center mt-5">
+                <h1>You are not logged in</h1>
+				</div>
+   
+
+	<section class="vh-50 mt-5">
 		<div class="container py-2 h-100" >
 			<div class="row d-flex justify-content-center align-items-center h-100">
-				<div class="col-12 col-md-8 col-lg-6 col-xl-5">
+				<div class="col-lg-6">
 					<div style="border-radius: 1rem; background-color: #6c757d;">
 						<div class="card-body p-5 text-center">
 							<?php if (isset($_SESSION['failedAuth']) && $_SESSION['failedAuth'] >= 3): ?>
@@ -51,5 +55,8 @@
 			</div>
 		</div>
 	</section>
+			</div>
+		
+	</div>
 	
     <?php require_once 'app/views/templates/footer.php' ?>
