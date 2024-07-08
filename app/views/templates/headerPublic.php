@@ -23,5 +23,10 @@ if (isset($_SESSION['auth']) == 1) {
           </svg>
         COSC4806
         </a>
+
+        <div class="col-md-3 text-end">
+        <a class="btn btn-primary" type="button" href="/login">Login</a>
+        <a class="btn btn-primary" type="button" href="/create">Register</a>
+        </div>
     </div>
     </nav>
