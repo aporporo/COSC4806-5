@@ -106,7 +106,7 @@ class User {
   //gets all the login attempts from the log table, groups by username, and returns the count
   public function get_total_logins() {
     $db = db_connect();
-    $statement = $db->prepare("select username, count(*) as count from log group by username order by count desc");
+    $statement = $db->prepare("select username, count(attempt) as count from log where attempt = 1 group by username order by count desc");
     $statement->execute();
     $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
     return $rows;

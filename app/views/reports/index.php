@@ -1,7 +1,8 @@
 <?php require_once 'app/views/templates/header.php' ?>
+
 <style>
     body {
-        /* background-image: url('https://images-assets.nasa.gov/image/PIA11141/PIA11141~large.jpg?w=1920&h=929&fit=clip&crop=faces%2Cfocalpoint'); */
+        
         background-image: url('https://i.imgur.com/EZQ0Pw0.jpeg');
         background-size: cover;
         background-repeat: no-repeat;
@@ -13,13 +14,46 @@
     .nav-link.active {
         color: black; 
     }
+
+    .nav-link:hover {
+        color: #ddd
+    }
+
+   
+      .breadcrumb .breadcrumb-item a {
+        color: white; 
+        text-decoration: none; 
+      }
+
+      .breadcrumb .breadcrumb-item::before {
+        color: white;
+      }
+
+      .breadcrumb .breadcrumb-item.active {
+        color: #bbb; 
+      }
+
+      .breadcrumb .breadcrumb-item a:hover {
+        color: #ddd; 
+      } 
 </style>
 
 <div class="container">
+
+
+    
     <div class="page-header" id="banner">
         <div class="row">
             <div class="col-lg-12">
-                <h1>Reports!</h1>
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Reports</li>
+                  </ol>
+                </nav>
+                <div class="col-lg-12">
+                  <br>
+                <h1 style="color: white">Admin Reports</h1>
                 
             </div>
         </div>
@@ -102,7 +136,7 @@
                   <th scope="col">#</th>
 
                   <th>Username</th>
-                  <th>Login Attempts</th>
+                  <th>Successful Logins</th>
 
                 </tr>
               </thead>
@@ -122,12 +156,5 @@
             </table>
       </div>
     </div>
-
-
-
-
-    
-
-
 
     <?php require_once 'app/views/templates/footer.php' ?>

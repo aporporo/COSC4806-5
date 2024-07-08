@@ -6,23 +6,42 @@
         background-repeat: no-repeat;
         background-attachment: fixed;
     }
+  
+  .breadcrumb .breadcrumb-item a {
+    color: white; 
+    text-decoration: none; 
+  }
+  
+  .breadcrumb .breadcrumb-item::before {
+    color: white;
+  }
+  
+  .breadcrumb .breadcrumb-item.active {
+    color: #bbb; 
+  }
+
+  .breadcrumb .breadcrumb-item a:hover {
+    color: #ddd; 
+  } 
 </style>
 
 <div class="container">
   <div class="page-header" id="banner">
     <div class="row">
       <div class="col-lg-12">
+        <!-- <div class="col-2 d-flex justify-content-center"> -->
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/">Home</a></li>
             <li class="breadcrumb-item active" aria-current="page">Library</li>
           </ol>
         </nav>
+        <!-- </div> -->
         <div class="col-lg-12">
           <br>
-        <h1>Reminders</h1>
+        <h1 style="color: white">Reminders</h1>
         </div>
-        <p> <a href="/reminders/create" class="lead">Create Reminder</a></p>
+        <p> <a href="/reminders/create" class="link-light">Create Reminder</a></p>
       </div>
     </div>
   </div>
